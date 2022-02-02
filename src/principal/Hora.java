@@ -15,17 +15,21 @@ public class Hora {
 
 
     public void aumentoHoras(){
-        if (horas == 24) {
+        if (horas +1 == 24) {
             horas = 0;
+        }else{
+            horas++;
         }
 
     }
 
     public void aumentoMinutos(){
 
-        if (minutos == 60) {
+        if (minutos +1 == 60) {
             minutos = 0;
-            horas++;
+            aumentoHoras();
+        }else{
+            minutos++;
         }
     }
 
@@ -34,7 +38,7 @@ public class Hora {
         segundos++;
         if(segundos==60) {
             segundos = 0;
-            minutos++;
+          aumentoMinutos();
         }
     }
 
